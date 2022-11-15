@@ -30,14 +30,16 @@ namespace MyfirstCSharp
         {
 
             //이름 바꾸기
-            string sTitle = lblTitle.Text;
+           // string sTitle = lblTitle.Text;
 
 
-            string sObj = "OOO";
+           // string sObj = "OOO";
 
-            string sValue = "김현승";
+           // string sValue = "김현승";
 
-            lblTitle.Text = sTitle.Replace(sObj,sValue);
+            //lblTitle.Text = sTitle.Replace(sObj,sValue);
+
+            lblTitle.Text = lblTitle.Text.Replace("OOO", "김현승");
 
             //변수에안담아도됨 한줄로 만들어보자
         }
@@ -50,10 +52,10 @@ namespace MyfirstCSharp
 
             string sTitle = lblTitle.Text;
 
-            string sValue =  "S/W";
+          //  string sValue =  "S/W";
 
-            int iIndex;
-            iIndex = sTitle.IndexOf(sValue);
+            //int iIndex;
+            int iIndex = sTitle.IndexOf("S/W");
 
             MessageBox.Show(Convert.ToString(iIndex));
         }
@@ -136,6 +138,7 @@ namespace MyfirstCSharp
         private void button6_Click(object sender, EventArgs e)
         {
             //되돌리기
+            
             lblTitle.Text = sTitle;
 
         }
