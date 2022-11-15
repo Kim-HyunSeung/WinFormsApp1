@@ -20,7 +20,8 @@ namespace MyfirstCSharp
     }
                                                                             //위아래 두개의 클래스를 하나의 클래스로 생각할수있다. 파티셜로 나눠둿을뿐
                                                                             //결국 같은 클래스임
-     partial class Chap11_AccessModfier
+     partial class Chap11_AccessModfier   //코딩으로 클래스를 만듬.
+                                          //따른방법으로 솔루션탐색기에서 클래스를 생성하면 솔루션탐색기 칸에서 만든 클래스를 확인 할수있다.
 
     {
         public Chap11_AccessModfier()
