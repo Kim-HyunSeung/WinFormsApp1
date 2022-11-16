@@ -16,5 +16,12 @@ namespace MyfirstCSharp
         {
             InitializeComponent();
         }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+
+            Chap12_ClassTest_Main.sRunStopStatus = "가동 중지";
+
+        }
     }
 }

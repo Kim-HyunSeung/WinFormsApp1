@@ -55,11 +55,19 @@ namespace MyFirstCSharp
         {
             // 지정한 위치에 입력한 문자를 삽입하기.
             string sString = txtstring.Text;            // 삽입할 문자열
-            int iIndex = Convert.ToInt32(txtstring.Text); //문자열을 삽입할위치
-                                                          //int iIndex = int.Parse(sString);//parse사용해서 변환
-                                                          //int iIndex = int.TryParse(sTitle,out sString2);//try parse사용해서 변환
+                                                        // int iIndex = Convert.ToInt32(txtstring.Text); //문자열을 삽입할위치
 
-            txtInsert.Text = sTitle.Insert(iIndex, sString); //Insert( 위치, 삽일할 대상) 필요>
+            //int iIndex = int.Parse(sString);//parse사용해서 변환
+
+            int iRe;
+            int.TryParse(txtIndex.Text, out iRe);//iRe가 정수가아니고 따른값 문자나 뭐이런거면 0번째 위치를 나타낸다.
+
+            //iRe가 정수값이라 숫자는 되는데 문자나 이상한게 드가면 오류가 떠서 무조건 0번째 위치로 텍스가 들어간다
+            txtInsert.Text = sTitle.Insert(iRe, sString);//try parse사용해서 변환
+
+            //sString를 iRe위치에 넣어서 표시
+
+           // txtInsert.Text = sTitle.Insert(iIndex, sString); //Insert( 위치, 삽일할 대상) 필요>
 
 
 

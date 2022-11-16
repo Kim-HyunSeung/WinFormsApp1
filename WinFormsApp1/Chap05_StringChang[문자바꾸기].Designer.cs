@@ -175,7 +175,7 @@
             // 
             // txtIndex
             // 
-            this.txtIndex.Location = new System.Drawing.Point(19, 25);
+            this.txtIndex.Location = new System.Drawing.Point(86, 22);
             this.txtIndex.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtIndex.Name = "txtIndex";
             this.txtIndex.Size = new System.Drawing.Size(63, 23);
@@ -183,7 +183,7 @@
             // 
             // txtstring
             // 
-            this.txtstring.Location = new System.Drawing.Point(97, 25);
+            this.txtstring.Location = new System.Drawing.Point(16, 22);
             this.txtstring.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtstring.Name = "txtstring";
             this.txtstring.Size = new System.Drawing.Size(66, 23);

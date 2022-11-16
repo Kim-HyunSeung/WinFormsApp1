@@ -31,6 +31,9 @@
             this.btnHello = new System.Windows.Forms.Button();
             this.btnNice = new System.Windows.Forms.Button();
             this.btnFighting = new System.Windows.Forms.Button();
+            this.btnStaticOrInstance = new System.Windows.Forms.Button();
+            this.btnStaticOrInstance_Call = new System.Windows.Forms.Button();
+            this.btnConst = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnHello
@@ -63,11 +66,43 @@
             this.btnFighting.UseVisualStyleBackColor = true;
             this.btnFighting.Click += new System.EventHandler(this.btnFighting_Click);
             // 
+            // btnStaticOrInstance
+            // 
+            this.btnStaticOrInstance.Location = new System.Drawing.Point(93, 214);
+            this.btnStaticOrInstance.Name = "btnStaticOrInstance";
+            this.btnStaticOrInstance.Size = new System.Drawing.Size(145, 100);
+            this.btnStaticOrInstance.TabIndex = 3;
+            this.btnStaticOrInstance.Text = "Static 또는 instance 필드 값 대입";
+            this.btnStaticOrInstance.UseVisualStyleBackColor = true;
+            this.btnStaticOrInstance.Click += new System.EventHandler(this.btnStaticOrInstance_Click);
+            // 
+            // btnStaticOrInstance_Call
+            // 
+            this.btnStaticOrInstance_Call.Location = new System.Drawing.Point(264, 214);
+            this.btnStaticOrInstance_Call.Name = "btnStaticOrInstance_Call";
+            this.btnStaticOrInstance_Call.Size = new System.Drawing.Size(145, 100);
+            this.btnStaticOrInstance_Call.TabIndex = 4;
+            this.btnStaticOrInstance_Call.Text = "Static 또는 instance 필드 호출";
+            this.btnStaticOrInstance_Call.UseVisualStyleBackColor = true;
+            this.btnStaticOrInstance_Call.Click += new System.EventHandler(this.btnStaticOrInstance_Call_Click);
+            // 
+            // btnConst
+            // 
+            this.btnConst.Location = new System.Drawing.Point(32, 333);
+            this.btnConst.Name = "btnConst";
+            this.btnConst.Size = new System.Drawing.Size(145, 70);
+            this.btnConst.TabIndex = 5;
+            this.btnConst.Text = "상수";
+            this.btnConst.UseVisualStyleBackColor = true;
+            // 
             // Chap13_Static_Const
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 396);
+            this.ClientSize = new System.Drawing.Size(623, 458);
+            this.Controls.Add(this.btnConst);
+            this.Controls.Add(this.btnStaticOrInstance_Call);
+            this.Controls.Add(this.btnStaticOrInstance);
             this.Controls.Add(this.btnFighting);
             this.Controls.Add(this.btnNice);
             this.Controls.Add(this.btnHello);
@@ -82,5 +117,8 @@
         private Button btnHello;
         private Button btnNice;
         private Button btnFighting;
+        private Button btnStaticOrInstance;
+        private Button btnStaticOrInstance_Call;
+        private Button btnConst;
     }
 }
