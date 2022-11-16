@@ -21,6 +21,13 @@ namespace MyfirstCSharp
     최초 초기화(최초로 값이 대입될떄,메서드가 실행될때 또는 호출) 이후 메모리에 등록되어 프로그램이 종료 될때까지    
     메모리에 상주한다. 불필요하게 사용할 경우 메모리 효율을 컨트롤할수 있으므로 사용상 고려가 필요
 
+
+    const 상수 (변화지 않는값)
+    최초 값 을 대입후 추가로 오류가 발생하여 
+    여러 개발자가 동시에 작업을 할 경우 또는 코딩의 길이가 
+    길어져서 변수에 대한 정의가 모호해 질 경우
+    데이터가 변질 될 수 있는 오류를 방지 할 수 있다.
+
      */
     public partial class Chap13_Static_Const : Form
     {
@@ -88,6 +95,28 @@ namespace MyfirstCSharp
             MessageBox.Show(StaticOrInstanceClass.sStatic_Value);
 
         }
+
+        private void btnConst_Click(object sender, EventArgs e)
+        {
+
+            // 상수 바뀌지 않는 값 Const
+
+            // 1. Const 객체 만들자
+              Const_Class Const_C = new Const_Class();
+
+            // 2. 객체를 만들어 접근을 할 수 없다
+            //   Const 상수 는 기본적으로 static 형태를 가지고 있다.***
+
+            // 3. 상수에 데이터 대입시 오류가 발생한다.
+            //Const_Class sConst_Value = "값을 넣어보자";
+
+            // 4. 확인.
+            MessageBox.Show(Const_Class.sConst_Value);
+
+
+
+
+        }
     }
 
 
@@ -107,4 +136,12 @@ namespace MyfirstCSharp
         public static string sStatic_Value = "안녕하세요"; //정적 필드 //객체를 생성 하지말아야됨.
 
     }
+
+    class Const_Class
+    {
+        //상수 필드
+        public const string sConst_Value = "상수 값";
+    }
+
+
 }

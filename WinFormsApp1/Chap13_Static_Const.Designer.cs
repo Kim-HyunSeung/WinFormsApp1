@@ -94,6 +94,7 @@
             this.btnConst.TabIndex = 5;
             this.btnConst.Text = "상수";
             this.btnConst.UseVisualStyleBackColor = true;
+            this.btnConst.Click += new System.EventHandler(this.btnConst_Click);
             // 
             // Chap13_Static_Const
             // 
