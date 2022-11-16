@@ -64,6 +64,7 @@ namespace MyfirstCSharp //프로젝트의 이름
             // Null 병합 연산자 ?? 
             // 데이터 타입의 유형이 Null 인지 판단하는 용법.
 
+          
             int? iValue = null;
 
             // 1. iValue 의 값이 null 인지 판단
@@ -72,8 +73,8 @@ namespace MyfirstCSharp //프로젝트의 이름
             MessageBox.Show(Convert.ToString(iValue ?? -1));
 
             // iValue에 10을 대입하는 경우 10 이 표현
-            iValue = 10;
-            MessageBox.Show(Convert.ToString(iValue ?? 0));
+            iValue = 10; //주석처리해서 값이없으면 위에NULL값이 들어가서 밑에 출력칸에 0이 출력됨.
+            MessageBox.Show(Convert.ToString(iValue ?? 0)); //A??B :만약에 A가 NULL이면 B를 표현 NULL이 아니면 A를 표현하라
 
             // 2. string 데이터 타입에 null 값 여부 판단
 

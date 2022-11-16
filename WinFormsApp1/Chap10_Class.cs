@@ -29,7 +29,7 @@ namespace MyfirstCSharp
 
        
         // 1. 생성자 멤버          //로직짬 가능
-        public Chap10_Class()
+        public  Chap10_Class()
         {
             MessageBox.Show("안녕하세요");
             //괄호안에서만 사용
@@ -45,11 +45,12 @@ namespace MyfirstCSharp
         // 클래스에서 사용되는 변수,객체 등을 기입 멤버                      //동급 개체안에서만 사용
         string sValue = "안녕하세요";
         int iValue = 10;
-
         public string sArm = "팔";
 
+        
+
         // 3. 메서드(함수) 멤버    //로직짬 가능
-         public void Method1()
+        public void Method1()
         {
             MessageBox.Show("Class 객체의 메서드를 호출하였습니다. ");
         }
@@ -58,5 +59,8 @@ namespace MyfirstCSharp
         // 메서드,생성자 멤버 : 실제로 실행되는 코딩, 로직이 구현되는곳
         // 생성자 멤버 : 클래스가 호출 될 때 자동으로 실행
         // 메서드 멤버 : 클래스를 호출 후 필요에 의해 별도로 호출하여 사용.
+
+
+
     }
 }
