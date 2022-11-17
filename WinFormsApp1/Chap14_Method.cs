@@ -281,16 +281,16 @@ namespace MyfirstCSharp
            
             RefMethod(iA_Value,ref iA_ValueRef);
 
-            MessageBox.Show($" iA_Value 값은 : {iA_Value}"); //5   이나옴
-            MessageBox.Show($" iA_ValueRef 의 값은 : {iA_ValueRef} ");//6   가나옴
+            MessageBox.Show($" iA_Value 값은 : {iA_Value}"); //5  13 이나옴
+            MessageBox.Show($" iA_ValueRef 의 값은 : {iA_ValueRef} ");//6  13  가나옴
         }
 
-        private void RefMethod(int iP_Value,  ref int iP_ValueRef)
+        private void RefMethod(int iP_Value, ref  int iP_ValueRef)
         {
-            MessageBox.Show($"ref인자 ip_iP_Value 값을 넣어라 : {iP_ValueRef}");//3   13가나옴
+            MessageBox.Show($"ref인자 ip_iP_Value 값을 넣어라 : {iP_ValueRef}");//3   20
             iP_ValueRef = iP_Value; 
             iP_Value = 10; 
-            MessageBox.Show($"ref인자 ip_iP_Value 값을 넣어라 : {iP_ValueRef}");//4    20이나옴
+            MessageBox.Show($"ref인자 ip_iP_Value 값을 넣어라 : {iP_ValueRef}");//4   13
         }
         #endregion
 
