@@ -31,6 +31,9 @@
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnMethodCall = new System.Windows.Forms.Button();
+            this.btnArg_Par = new System.Windows.Forms.Button();
+            this.btnVoidReturn = new System.Windows.Forms.Button();
+            this.btnStringReturn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtTitle
@@ -45,9 +48,9 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Location = new System.Drawing.Point(56, 138);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(39, 15);
+            this.lblTitle.Size = new System.Drawing.Size(50, 15);
             this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "label1";
+            this.lblTitle.Text = "ddfdgdf";
             // 
             // btnMethodCall
             // 
@@ -59,11 +62,44 @@
             this.btnMethodCall.UseVisualStyleBackColor = true;
             this.btnMethodCall.Click += new System.EventHandler(this.btnMethodCall_Click);
             // 
+            // btnArg_Par
+            // 
+            this.btnArg_Par.Location = new System.Drawing.Point(136, 185);
+            this.btnArg_Par.Name = "btnArg_Par";
+            this.btnArg_Par.Size = new System.Drawing.Size(108, 55);
+            this.btnArg_Par.TabIndex = 3;
+            this.btnArg_Par.Text = "인수 인자";
+            this.btnArg_Par.UseVisualStyleBackColor = true;
+            this.btnArg_Par.Click += new System.EventHandler(this.btnArg_Par_Click);
+            // 
+            // btnVoidReturn
+            // 
+            this.btnVoidReturn.Location = new System.Drawing.Point(22, 246);
+            this.btnVoidReturn.Name = "btnVoidReturn";
+            this.btnVoidReturn.Size = new System.Drawing.Size(108, 55);
+            this.btnVoidReturn.TabIndex = 4;
+            this.btnVoidReturn.Text = "Void Retun";
+            this.btnVoidReturn.UseVisualStyleBackColor = true;
+            this.btnVoidReturn.Click += new System.EventHandler(this.btnVoidReturn_Click);
+            // 
+            // btnStringReturn
+            // 
+            this.btnStringReturn.Location = new System.Drawing.Point(136, 246);
+            this.btnStringReturn.Name = "btnStringReturn";
+            this.btnStringReturn.Size = new System.Drawing.Size(108, 55);
+            this.btnStringReturn.TabIndex = 5;
+            this.btnStringReturn.Text = "String Return";
+            this.btnStringReturn.UseVisualStyleBackColor = true;
+            this.btnStringReturn.Click += new System.EventHandler(this.btnStringReturn_Click);
+            // 
             // Chap14_Method
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnStringReturn);
+            this.Controls.Add(this.btnVoidReturn);
+            this.Controls.Add(this.btnArg_Par);
             this.Controls.Add(this.btnMethodCall);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.txtTitle);
@@ -79,5 +115,8 @@
         private TextBox txtTitle;
         private Label lblTitle;
         private Button btnMethodCall;
+        private Button btnArg_Par;
+        private Button btnVoidReturn;
+        private Button btnStringReturn;
     }
 }
