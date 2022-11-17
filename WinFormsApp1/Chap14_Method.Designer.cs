@@ -34,6 +34,8 @@
             this.btnArg_Par = new System.Windows.Forms.Button();
             this.btnVoidReturn = new System.Windows.Forms.Button();
             this.btnStringReturn = new System.Windows.Forms.Button();
+            this.btnIntReturn = new System.Windows.Forms.Button();
+            this.btnDefaultToReturn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtTitle
@@ -92,11 +94,33 @@
             this.btnStringReturn.UseVisualStyleBackColor = true;
             this.btnStringReturn.Click += new System.EventHandler(this.btnStringReturn_Click);
             // 
+            // btnIntReturn
+            // 
+            this.btnIntReturn.Location = new System.Drawing.Point(250, 246);
+            this.btnIntReturn.Name = "btnIntReturn";
+            this.btnIntReturn.Size = new System.Drawing.Size(108, 55);
+            this.btnIntReturn.TabIndex = 6;
+            this.btnIntReturn.Text = "Int Return";
+            this.btnIntReturn.UseVisualStyleBackColor = true;
+            this.btnIntReturn.Click += new System.EventHandler(this.btnIntReturn_Click);
+            // 
+            // btnDefaultToReturn
+            // 
+            this.btnDefaultToReturn.Location = new System.Drawing.Point(364, 246);
+            this.btnDefaultToReturn.Name = "btnDefaultToReturn";
+            this.btnDefaultToReturn.Size = new System.Drawing.Size(108, 55);
+            this.btnDefaultToReturn.TabIndex = 7;
+            this.btnDefaultToReturn.Text = "Default Return";
+            this.btnDefaultToReturn.UseVisualStyleBackColor = true;
+            this.btnDefaultToReturn.Click += new System.EventHandler(this.btnDefaultToReturn_Click);
+            // 
             // Chap14_Method
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDefaultToReturn);
+            this.Controls.Add(this.btnIntReturn);
             this.Controls.Add(this.btnStringReturn);
             this.Controls.Add(this.btnVoidReturn);
             this.Controls.Add(this.btnArg_Par);
@@ -118,5 +142,7 @@
         private Button btnArg_Par;
         private Button btnVoidReturn;
         private Button btnStringReturn;
+        private Button btnIntReturn;
+        private Button btnDefaultToReturn;
     }
 }

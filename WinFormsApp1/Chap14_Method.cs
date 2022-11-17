@@ -103,7 +103,7 @@ namespace MyfirstCSharp
         private void btnStringReturn_Click(object sender, EventArgs e)
         {  //   4                        1                               //로직이 실행되는 순서를 나타냄.
            string sResult = ShowMessage4("안녕하세요");
-           //   5
+            //   5
             MessageBox.Show(sResult);      //리턴의 결과값 성공이라는 말이 요기서 뜬다.
 
 
@@ -112,13 +112,57 @@ namespace MyfirstCSharp
         private string ShowMessage4(string sMessage) //메서드 앞에 데이터타입이 있을경우 return 값을 데이터 타입에 맞춰서 리턴
         {
             //    2         
-            MessageBox.Show(sMessage);
+            MessageBox.Show(sMessage);  //Show 는 static형식으로 초반에 지정되어잇음 메세지박스는 클래스형식임.
             //    3
             return  "성공";
             
 
         }
         #endregion
-    
+
+
+        #region<Int 값을 반환하는 리턴>
+        private void btnIntReturn_Click(object sender, EventArgs e)
+        {
+            int iValue1 = 10;
+            int iValue2 = 20;
+
+           
+            //IntSum(iValue2, iValue1); //벨류이름이 같아도 순서가 위아래 틀려도 순서 그대로 2->1 1->2 이렇게받음.
+            
+            
+            int a = IntSum(iValue2, iValue1);
+
+            MessageBox.Show(Convert.ToString(a)); //메세지 박스에 표현해줘야하기때문에 정수를 형변환시켜서 표현.
+
+        }
+        #endregion
+
+
+      
+        int IntSum(int iValue1,int iValue2)
+        {
+
+           //MessageBox.Show(Convert.ToString(iValue1+iValue2));
+            return iValue1 + iValue2;
+
+        }
+        #region<인자가 기본값을 가지는 함수의 결과를 반환하는 리턴 메서드>(선택적 인수)
+        private void btnDefaultToReturn_Click(object sender, EventArgs e)
+        {
+          
+            MessageBox.Show(Convert.ToString(IntSum2(10,20,50))); // 괄호안(a,b) //반복연습 해보자
+        }
+
+        #endregion
+        private int IntSum2(int iValue1 , int iValue2 ,int iValue3 = 20) //3개의 변수가있을때 가운데 숫자를넣으면 위쪽에서 인식불가
+        {
+           
+            return iValue1 + iValue2 + iValue3;
+
+            //인자값에 기본값을 설정할 경우 중간에 있는 인자에만
+            //기본값을 설정 할 수없다.
+            //마지막 인자는 반드시 기본값을 설정하는 인자여야만 한다.
+        }
     }
 }
