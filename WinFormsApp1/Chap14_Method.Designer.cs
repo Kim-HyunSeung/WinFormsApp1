@@ -41,6 +41,9 @@
             this.btnCatch1 = new System.Windows.Forms.Button();
             this.btnArrayArg = new System.Windows.Forms.Button();
             this.btnArrayReturn = new System.Windows.Forms.Button();
+            this.btnClassMCall = new System.Windows.Forms.Button();
+            this.btnRef = new System.Windows.Forms.Button();
+            this.btnout = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -170,11 +173,44 @@
             this.btnArrayReturn.UseVisualStyleBackColor = true;
             this.btnArrayReturn.Click += new System.EventHandler(this.btnArrayReturn_Click);
             // 
+            // btnClassMCall
+            // 
+            this.btnClassMCall.Location = new System.Drawing.Point(282, 495);
+            this.btnClassMCall.Name = "btnClassMCall";
+            this.btnClassMCall.Size = new System.Drawing.Size(160, 55);
+            this.btnClassMCall.TabIndex = 11;
+            this.btnClassMCall.Text = "Class Method Call";
+            this.btnClassMCall.UseVisualStyleBackColor = true;
+            this.btnClassMCall.Click += new System.EventHandler(this.btnClassMCall_Click);
+            // 
+            // btnRef
+            // 
+            this.btnRef.Location = new System.Drawing.Point(22, 573);
+            this.btnRef.Name = "btnRef";
+            this.btnRef.Size = new System.Drawing.Size(60, 40);
+            this.btnRef.TabIndex = 12;
+            this.btnRef.Text = "Ref";
+            this.btnRef.UseVisualStyleBackColor = true;
+            this.btnRef.Click += new System.EventHandler(this.btnRef_Click);
+            // 
+            // btnout
+            // 
+            this.btnout.Location = new System.Drawing.Point(88, 573);
+            this.btnout.Name = "btnout";
+            this.btnout.Size = new System.Drawing.Size(60, 40);
+            this.btnout.TabIndex = 13;
+            this.btnout.Text = "out";
+            this.btnout.UseVisualStyleBackColor = true;
+            this.btnout.Click += new System.EventHandler(this.btnout_Click);
+            // 
             // Chap14_Method
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(751, 599);
+            this.ClientSize = new System.Drawing.Size(751, 698);
+            this.Controls.Add(this.btnout);
+            this.Controls.Add(this.btnRef);
+            this.Controls.Add(this.btnClassMCall);
             this.Controls.Add(this.btnArrayReturn);
             this.Controls.Add(this.btnArrayArg);
             this.Controls.Add(this.groupBox1);
@@ -209,5 +245,8 @@
         private Button btnCatch1;
         private Button btnArrayArg;
         private Button btnArrayReturn;
+        private Button btnClassMCall;
+        private Button btnRef;
+        private Button btnout;
     }
 }

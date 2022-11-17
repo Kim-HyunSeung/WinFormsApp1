@@ -19,6 +19,8 @@ namespace MyfirstCSharp
         // 데이터를 받는 값 : 인자,매개변수,파라미터
         // 아!수주 받자매 파
         // return : 메서드에서 처리한 어떠한 결과를 메서드를 결과를 호출한 부분으로 넘겨주는 것
+        // 리턴값을 호출한곳으로 되돌려보내는것 종료하는건 아님
+        
         // ref, out,in : 매개변수로써 한정자
         public Chap14_Method()
         {
@@ -142,15 +144,15 @@ namespace MyfirstCSharp
       
         int IntSum(int iValue1,int iValue2)
         {
-
-
+            
+            return iValue1 + iValue2;
             // iValue1 = 25;
             // *************************************
             // 인수와 인자 의 변수 이름이 같다고 하더라도
             // 주고 받는 위치에 따라 값이 대입 된다.
 
             //MessageBox.Show(Convert.ToString(iValue1+iValue2));
-            return iValue1 + iValue2;
+          
 
         }
         #region<인자가 기본값을 가지는 함수의 결과를 반환하는 리턴 메서드>(선택적 인수)
@@ -241,7 +243,108 @@ namespace MyfirstCSharp
             isumInt[1] += iArray[1];
 
             return isumInt;
+
+
         }
         #endregion
+
+
+        #region< 다른 클래스의 함수 호출 >
+        private void btnClassMCall_Click(object sender, EventArgs e)
+        {
+
+            //new클래스를 객체화 또는 인스턴스
+            New_Class new_Class = new New_Class();       
+            MessageBox.Show(new_Class.IntSum(40).ToString());
+
+            //New_Class IntSum(10,20);
+        }
+        #endregion
+
+        #region< ref인자 반환(값 참조) ,read >
+        private void btnRef_Click(object sender, EventArgs e) //**중요하다 이해하기
+
+        {
+            // ref
+            // ref 인수값을 참조형식으로 변형시켜 ref인자와 같은 데이터 주소(값) 을 바라볼수있도록
+            // 만들어놓은 키워드
+
+            // ref 키워드의 인수를 사용하기 위해서는 반드시 값이 할당되어있는 상태여야 한다
+
+            //int iA_ValueRef - ref로 사용되어야할 인수는 반드시 초기화가 되어있어야한다.
+            int iA_Value = 13;
+            int iA_ValueRef = 20; //값이 대입되어 있지않을경우 ref를 사용할수없다.
+
+
+            MessageBox.Show($"인수 iA_Value 값은 : {iA_Value}");      //1    13이나옴
+            MessageBox.Show($"ref 인수 iA_ValueRef 의 값은 : {iA_ValueRef} ");//2    20이나옴
+           
+            RefMethod(iA_Value,ref iA_ValueRef);
+
+            MessageBox.Show($" iA_Value 값은 : {iA_Value}"); //5   이나옴
+            MessageBox.Show($" iA_ValueRef 의 값은 : {iA_ValueRef} ");//6   가나옴
+        }
+
+        private void RefMethod(int iP_Value,  ref int iP_ValueRef)
+        {
+            MessageBox.Show($"ref인자 ip_iP_Value 값을 넣어라 : {iP_ValueRef}");//3   13가나옴
+            iP_ValueRef = iP_Value; 
+            iP_Value = 10; 
+            MessageBox.Show($"ref인자 ip_iP_Value 값을 넣어라 : {iP_ValueRef}");//4    20이나옴
+        }
+        #endregion
+
+
+        #region<ref 인자 반환, 값을 할당하지 않는out 인자.write>
+        private void btnout_Click(object sender, EventArgs e) //이해하자.
+        {
+            // Out 키워드를 인수값을 초기화 할 필요가 없다
+            // 인자변수는 메서드 내에서 반드시 초기화(데이터값이 초기화 되어야한다)
+
+            int iA_Value = 1;
+            int iA_ValueOut = 10; //out는 대입 값이없어도 실행된다
+
+            OutMethod(iA_Value, out iA_ValueOut);
+
+            MessageBox.Show($"iA_Value 값은 : {iA_Value}"); //1
+            MessageBox.Show($"iA_iA_ValueOut 값은 : {iA_ValueOut}"); //1
+
+        }
+        private void OutMethod(int iP_Value, out int iP_ValueOut) 
+        {
+            // 메서드 내에서 인자 iP_ValueOut에 값을 할당 하지 않으면 오류가 발생
+            iP_ValueOut = iP_Value;
+            iP_Value = 30;
+          
+            MessageBox.Show($"Out 인자 iP_ValueOut 의 값은 : {iP_ValueOut}"); //1
+
+
+        }
+        #endregion
+
+    }
+
+
+    class New_Class    
+    {
+        //수를 더하는 new 클래스 메서드
+       public  int IntSum(int iValue1, int iValue2 = 20)
+        {
+           
+            return iValue1 + iValue2;
+
+        }
+
+
+        // 모든 클래스에서 사용할수 있는 메모리의 상주
+        //또는 정적으로 머물러 있는 정수 결과 반환 타입의
+        //엔트 투 썸 메서드를 만들며
+        //인자 값으로는 인트형 데이터 타입을 두개 받는 메서스
+        public static int IntSum2(int iValue1, int iValue2)
+        {
+
+            return iValue1 + iValue2;
+        }
+    
     }
 }
