@@ -191,7 +191,7 @@ namespace MyfirstCSharp
                NULL 로 처리 할수 있다. */
 
             int? ivalue = null;
-            string sValue = null;// 이거 안됨 대신에 string 뒤에 ? 있으면 가능
+            string sValue = null;
 
             MessageBox.Show(Convert.ToString(sValue));
             //MessageBox.Show(sValue.ToString());

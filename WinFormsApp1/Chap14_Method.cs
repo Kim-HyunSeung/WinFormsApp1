@@ -34,9 +34,9 @@ namespace MyfirstCSharp
 
         }
 
-        void ShowMessage()
+       public void ShowMessage()
         {
-            MessageBox.Show("안녕하세요");
+            MessageBox.Show("안녕하세요");       
             txtTitle.Text = "안녕하세요";
             lblTitle.Text = "안녕하세요";
         }
@@ -143,7 +143,13 @@ namespace MyfirstCSharp
         int IntSum(int iValue1,int iValue2)
         {
 
-           //MessageBox.Show(Convert.ToString(iValue1+iValue2));
+
+            // iValue1 = 25;
+            // *************************************
+            // 인수와 인자 의 변수 이름이 같다고 하더라도
+            // 주고 받는 위치에 따라 값이 대입 된다.
+
+            //MessageBox.Show(Convert.ToString(iValue1+iValue2));
             return iValue1 + iValue2;
 
         }
@@ -158,12 +164,84 @@ namespace MyfirstCSharp
         #endregion
         private int IntSum2(int iValue1 , int iValue2 ,int iValue3 = 20) //3개의 변수가있을때 가운데 숫자를넣으면 위쪽에서 인식불가
         {
-           
+
+            // 인자 int ivalue2 에 20을 기본값으로 대입한 메서드 인경우
+            // IntSum2 을 호출 하는 부분에는 ivalue2 이 들어갈 인수값을 등록하지 않아도 된다
+
             return iValue1 + iValue2 + iValue3;
 
             //인자값에 기본값을 설정할 경우 중간에 있는 인자에만
             //기본값을 설정 할 수없다.
             //마지막 인자는 반드시 기본값을 설정하는 인자여야만 한다.
         }
+
+        #region< 클래스를 인수로 전달 하는 경우, 간단한 게임>
+        private void btnCatch1_Click(object sender, EventArgs e)
+        {
+            CatchGameMedhod(btnCatch1,btnCatch2);
+
+        }
+
+        private void btnCatch2_Click(object sender, EventArgs e)
+        {
+
+            CatchGameMedhod(btnCatch2, btnCatch1);
+
+
+        }
+        private void CatchGameMedhod(Button btn_Catch1, Button btn_Catch2)
+        {
+            btn_Catch1.Text = "";
+            btn_Catch2.Text = "나잡아봐라";
+            //messagebox.show()
+
+        }
+        #endregion
+
+
+        #region< 인수를 배열로 전달하는 경우 >
+        private void btnArrayArg_Click(object sender, EventArgs e)
+        {
+
+            string[] ArrString = { "안녕하세요", "반갑습니다", "시작프로그래밍" };
+            ShowMessage6(ArrString);
+        }
+
+        private void ShowMessage6(string[] sArrayString)
+        {
+
+            MessageBox.Show(sArrayString[0]);
+            txtTitle.Text = sArrayString[1];
+            lblTitle.Text = sArrayString[2];
+
+        }
+
+
+        #endregion
+
+
+        #region< 배열을 리턴 하는 경우 >
+        private void btnArrayReturn_Click(object sender, EventArgs e)
+        {
+            // 1. 배열 인자 생성.
+            int[] iArray = { 10, 20 };
+
+            // 2. 메소드 호출
+            iArray = IntSum3(iArray);
+
+            MessageBox.Show($"[0] : {iArray[0]} , [1] : {iArray[1]}");
+
+        }
+
+        private int[] IntSum3(int[] iArray)
+        {
+            // 배열 인수를 일정한 값과 합하는 메서드,
+            int[] isumInt = { 5, 10 };
+            isumInt[0] = isumInt[0] + iArray[0];
+            isumInt[1] += iArray[1];
+
+            return isumInt;
+        }
+        #endregion
     }
 }

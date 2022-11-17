@@ -149,7 +149,7 @@ namespace MyfirstCSharp
     // 클래스 내의 모든멤버 (
     //static
 
-    static class Static_Class3 
+       static class Static_Class3 
     {
        private static string sValue = "";
        public const string sValue2 = "";
