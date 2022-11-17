@@ -152,7 +152,8 @@ namespace MyfirstCSharp
         {
           
             MessageBox.Show(Convert.ToString(IntSum2(10,20,50))); // 괄호안(a,b) //반복연습 해보자
-        }
+        }                                         //요기에 세개의 값이 들어가있을경우 밑에 정수값을 대입하려고해도 위에먼저 되기
+                                                  //때문에 80이 출력됨.
 
         #endregion
         private int IntSum2(int iValue1 , int iValue2 ,int iValue3 = 20) //3개의 변수가있을때 가운데 숫자를넣으면 위쪽에서 인식불가
