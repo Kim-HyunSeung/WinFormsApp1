@@ -35,6 +35,9 @@
             this.btnAndIf = new System.Windows.Forms.Button();
             this.btnOrIf = new System.Windows.Forms.Button();
             this.btnBoolIf = new System.Windows.Forms.Button();
+            this.btnP_MFlag = new System.Windows.Forms.Button();
+            this.btnH_Jtest = new System.Windows.Forms.Button();
+            this.btnTernaryOperator = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtInput
@@ -104,11 +107,44 @@
             this.btnBoolIf.UseVisualStyleBackColor = true;
             this.btnBoolIf.Click += new System.EventHandler(this.btnBoolIf_Click);
             // 
+            // btnP_MFlag
+            // 
+            this.btnP_MFlag.Location = new System.Drawing.Point(12, 158);
+            this.btnP_MFlag.Name = "btnP_MFlag";
+            this.btnP_MFlag.Size = new System.Drawing.Size(118, 48);
+            this.btnP_MFlag.TabIndex = 7;
+            this.btnP_MFlag.Text = "음수/양수 Test";
+            this.btnP_MFlag.UseVisualStyleBackColor = true;
+            this.btnP_MFlag.Click += new System.EventHandler(this.btnP_MFlag_Click);
+            // 
+            // btnH_Jtest
+            // 
+            this.btnH_Jtest.Location = new System.Drawing.Point(153, 158);
+            this.btnH_Jtest.Name = "btnH_Jtest";
+            this.btnH_Jtest.Size = new System.Drawing.Size(118, 48);
+            this.btnH_Jtest.TabIndex = 8;
+            this.btnH_Jtest.Text = "홀수/짝수 Test";
+            this.btnH_Jtest.UseVisualStyleBackColor = true;
+            this.btnH_Jtest.Click += new System.EventHandler(this.btnH_Jtest_Click);
+            // 
+            // btnTernaryOperator
+            // 
+            this.btnTernaryOperator.Location = new System.Drawing.Point(290, 158);
+            this.btnTernaryOperator.Name = "btnTernaryOperator";
+            this.btnTernaryOperator.Size = new System.Drawing.Size(118, 48);
+            this.btnTernaryOperator.TabIndex = 9;
+            this.btnTernaryOperator.Text = "상황연산자";
+            this.btnTernaryOperator.UseVisualStyleBackColor = true;
+            this.btnTernaryOperator.Click += new System.EventHandler(this.btnTernaryOperator_Click);
+            // 
             // Chap15_BranchingStatment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 703);
+            this.Controls.Add(this.btnTernaryOperator);
+            this.Controls.Add(this.btnH_Jtest);
+            this.Controls.Add(this.btnP_MFlag);
             this.Controls.Add(this.btnBoolIf);
             this.Controls.Add(this.btnOrIf);
             this.Controls.Add(this.btnAndIf);
@@ -132,5 +168,8 @@
         private Button btnAndIf;
         private Button btnOrIf;
         private Button btnBoolIf;
+        private Button btnP_MFlag;
+        private Button btnH_Jtest;
+        private Button btnTernaryOperator;
     }
 }

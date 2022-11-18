@@ -221,10 +221,98 @@ namespace MyfirstCSharp
 
             else if (sTxtValue != "")
             {
-
                 MessageBox.Show("적절한 분기문이 없습니다");
             }
              // 마지막에 else는 없어도됨.
-        }      
+        }
+
+        private void btnP_MFlag_Click(object sender, EventArgs e)
+        {
+
+            int iTxtValue = 0;
+            bool bFalg = false;
+
+            bFalg = Int_.TryParse(txtInput.Text, out iTxtValue);
+            if (!bFalg)
+            {
+                MessageBox.Show("음수 양수 판단을 할 수 없습니다");
+                return;
+            }
+
+            //음수 양수 로직 처리
+            if (iTxtValue < 0) 
+            {
+                MessageBox.Show("음수 입니다");
+            }
+           else if (iTxtValue > 0)
+            {
+                MessageBox.Show("양수 입니다");
+
+            }
+
+           else if (iTxtValue == 0) //else만 적어도됨
+            
+            {
+                MessageBox.Show("0 값을 입력하셨습니다.");
+
+            }
+        
+        }
+
+        private void btnH_Jtest_Click(object sender, EventArgs e)
+        {
+
+            //홀, 짝 찾기
+
+            int iTxtValue = 0;
+            bool bFalg = false;
+
+            bFalg = Int_.TryParse(txtInput.Text, out iTxtValue);
+
+            if (!bFalg )
+            {
+                MessageBox.Show("아무값도 없는값입니다");
+                return;
+            }
+            if (iTxtValue % 2 == 0)
+            {
+                MessageBox.Show("짝수 입니다");
+                
+            }
+            else 
+            {
+                MessageBox.Show("홀수 입니다");
+
+            }
+
+        }
+
+        private void btnTernaryOperator_Click(object sender, EventArgs e)
+        {
+            // 상황 연산자
+            // 피연산자의 개수가 3개인 조건부 연산자
+            // if, else 구문을 한줄로 간단하게 표현 할 수 있기 때문에 인라인if(in-line if)
+            // 문 이라고도 한다.
+            int iTxtValue = 0;
+            bool bFalg = false;
+
+            bFalg = Int_.TryParse(txtInput.Text, out iTxtValue);
+
+            if (!bFalg)
+            {
+                MessageBox.Show("숫자로 바꿀수 없는 값입니다");
+                return;
+            }
+            
+            string sResult = string.Empty;
+
+            sResult = (iTxtValue % 2 == 0 ) ? "짝수입니다": "홀수입니다";
+            MessageBox.Show(sResult);
+
+          //  MessageBox.Show((iTxtValue % 2 == 0) ? "짝수입니다" : "홀수입니다"); //한줄로 표현함
+
+
+
+        }
     }
 }
