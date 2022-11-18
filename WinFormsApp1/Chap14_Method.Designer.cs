@@ -44,6 +44,10 @@
             this.btnClassMCall = new System.Windows.Forms.Button();
             this.btnRef = new System.Windows.Forms.Button();
             this.btnout = new System.Windows.Forms.Button();
+            this.btnIn = new System.Windows.Forms.Button();
+            this.btnOverLoding = new System.Windows.Forms.Button();
+            this.btnTryParse = new System.Windows.Forms.Button();
+            this.btnGenericMethod = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +61,7 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(56, 138);
+            this.lblTitle.Location = new System.Drawing.Point(22, 82);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(13, 15);
             this.lblTitle.TabIndex = 1;
@@ -127,7 +131,7 @@
             // 
             this.groupBox1.Controls.Add(this.btnCatch2);
             this.groupBox1.Controls.Add(this.btnCatch1);
-            this.groupBox1.Location = new System.Drawing.Point(35, 377);
+            this.groupBox1.Location = new System.Drawing.Point(22, 319);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(355, 100);
             this.groupBox1.TabIndex = 8;
@@ -155,7 +159,7 @@
             // 
             // btnArrayArg
             // 
-            this.btnArrayArg.Location = new System.Drawing.Point(22, 495);
+            this.btnArrayArg.Location = new System.Drawing.Point(22, 425);
             this.btnArrayArg.Name = "btnArrayArg";
             this.btnArrayArg.Size = new System.Drawing.Size(108, 55);
             this.btnArrayArg.TabIndex = 9;
@@ -165,7 +169,7 @@
             // 
             // btnArrayReturn
             // 
-            this.btnArrayReturn.Location = new System.Drawing.Point(153, 495);
+            this.btnArrayReturn.Location = new System.Drawing.Point(136, 425);
             this.btnArrayReturn.Name = "btnArrayReturn";
             this.btnArrayReturn.Size = new System.Drawing.Size(108, 55);
             this.btnArrayReturn.TabIndex = 10;
@@ -175,7 +179,7 @@
             // 
             // btnClassMCall
             // 
-            this.btnClassMCall.Location = new System.Drawing.Point(282, 495);
+            this.btnClassMCall.Location = new System.Drawing.Point(250, 425);
             this.btnClassMCall.Name = "btnClassMCall";
             this.btnClassMCall.Size = new System.Drawing.Size(160, 55);
             this.btnClassMCall.TabIndex = 11;
@@ -185,7 +189,7 @@
             // 
             // btnRef
             // 
-            this.btnRef.Location = new System.Drawing.Point(22, 573);
+            this.btnRef.Location = new System.Drawing.Point(22, 486);
             this.btnRef.Name = "btnRef";
             this.btnRef.Size = new System.Drawing.Size(60, 40);
             this.btnRef.TabIndex = 12;
@@ -195,7 +199,7 @@
             // 
             // btnout
             // 
-            this.btnout.Location = new System.Drawing.Point(88, 573);
+            this.btnout.Location = new System.Drawing.Point(88, 486);
             this.btnout.Name = "btnout";
             this.btnout.Size = new System.Drawing.Size(60, 40);
             this.btnout.TabIndex = 13;
@@ -203,11 +207,55 @@
             this.btnout.UseVisualStyleBackColor = true;
             this.btnout.Click += new System.EventHandler(this.btnout_Click);
             // 
+            // btnIn
+            // 
+            this.btnIn.Location = new System.Drawing.Point(154, 486);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(60, 40);
+            this.btnIn.TabIndex = 14;
+            this.btnIn.Text = "In";
+            this.btnIn.UseVisualStyleBackColor = true;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
+            // 
+            // btnOverLoding
+            // 
+            this.btnOverLoding.Location = new System.Drawing.Point(22, 532);
+            this.btnOverLoding.Name = "btnOverLoding";
+            this.btnOverLoding.Size = new System.Drawing.Size(88, 40);
+            this.btnOverLoding.TabIndex = 15;
+            this.btnOverLoding.Text = "OverLoding";
+            this.btnOverLoding.UseVisualStyleBackColor = true;
+            this.btnOverLoding.Click += new System.EventHandler(this.btnOverLoding_Click);
+            // 
+            // btnTryParse
+            // 
+            this.btnTryParse.Location = new System.Drawing.Point(22, 578);
+            this.btnTryParse.Name = "btnTryParse";
+            this.btnTryParse.Size = new System.Drawing.Size(88, 40);
+            this.btnTryParse.TabIndex = 16;
+            this.btnTryParse.Text = "TryParse";
+            this.btnTryParse.UseVisualStyleBackColor = true;
+            this.btnTryParse.Click += new System.EventHandler(this.btnTryParse_Click);
+            // 
+            // btnGenericMethod
+            // 
+            this.btnGenericMethod.Location = new System.Drawing.Point(116, 532);
+            this.btnGenericMethod.Name = "btnGenericMethod";
+            this.btnGenericMethod.Size = new System.Drawing.Size(128, 40);
+            this.btnGenericMethod.TabIndex = 17;
+            this.btnGenericMethod.Text = "Generic Method";
+            this.btnGenericMethod.UseVisualStyleBackColor = true;
+            this.btnGenericMethod.Click += new System.EventHandler(this.btnGenericMethod_Click);
+            // 
             // Chap14_Method
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(751, 698);
+            this.ClientSize = new System.Drawing.Size(676, 703);
+            this.Controls.Add(this.btnGenericMethod);
+            this.Controls.Add(this.btnTryParse);
+            this.Controls.Add(this.btnOverLoding);
+            this.Controls.Add(this.btnIn);
             this.Controls.Add(this.btnout);
             this.Controls.Add(this.btnRef);
             this.Controls.Add(this.btnClassMCall);
@@ -248,5 +296,9 @@
         private Button btnClassMCall;
         private Button btnRef;
         private Button btnout;
+        private Button btnIn;
+        private Button btnOverLoding;
+        private Button btnTryParse;
+        private Button btnGenericMethod;
     }
 }

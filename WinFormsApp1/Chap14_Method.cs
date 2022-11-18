@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -302,7 +303,7 @@ namespace MyfirstCSharp
             // 인자변수는 메서드 내에서 반드시 초기화(데이터값이 초기화 되어야한다)
 
             int iA_Value = 1;
-            int iA_ValueOut = 10; //out는 대입 값이없어도 실행된다
+            int iA_ValueOut = 10; //out는 대입 값이없어도 실행된다 //ex)변수;
 
             OutMethod(iA_Value, out iA_ValueOut);
 
@@ -320,6 +321,132 @@ namespace MyfirstCSharp
 
 
         }
+        #endregion
+
+
+        #region< In 형식의 인자 설정, ReadOnly >
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            // In 인자 타입
+            // 읽기전용 속성으로 변경. 수정을 할수 없다.
+            int iValue = 10;
+            InMethod("문자인수", in iValue);
+
+        }
+
+        private void InMethod(string sValue, in int iValue)
+        {
+
+            MessageBox.Show(Convert.ToString(iValue));
+           
+            // iValue 는 In 타입 이므로 수정 또는 변경을 할 수 없다.
+            // iValue = 10;
+
+        }
+
+        #endregion
+
+
+        #region< 메서드 OverLoding >
+        private void btnOverLoding_Click(object sender, EventArgs e)
+        {
+            // Over Loding
+            // 예를 들어 인자를 메세지 박스로 표현하는
+            // 일을 해야하는 메서드가 있다고 할때
+            // 같은 메소드 이름으로 인자 데이터 변수
+            // 및 개수를 다르게 하여 여러 상황에 
+            // 맞게 사용 할 수 있게 만드는 기능.
+
+            ShowMessageOL1("안녕하세요", "반갑습니다");
+
+            // 정수형으로 인수 인자 값을 처리하는 메서드를 만들기 위해서는
+            // 메서드 이름이 다른 기능을 따로 구현해야한다.
+            // 즉, 반환하는 결과는 같지만 상황에(인수,인자값의 변화) 따라서
+            // 여러가지 이름의 메서드를 만들어야 한다.
+            ShowMessageInt(10, 20);
+
+            ShowMessageOL1(10, 20);
+        }
+
+        private void ShowMessageOL1(string sValue1, string sValue2) 
+        {
+            MessageBox.Show(sValue1 + sValue2 );
+        }
+
+        private void ShowMessageInt(int iValue, int iValue2)
+        {
+            MessageBox.Show(Convert.ToString(iValue) + Convert.ToString(iValue2));
+        }
+
+        private void ShowMessageOL1(int iValue, int iValue2) 
+        {
+            MessageBox.Show($"{iValue}{iValue2}");
+        }
+        #endregion
+
+
+        #region< Out 참조전달 방식을 이용한 TryParse 메소드 만들어보기 >
+        private void btnTryParse_Click(object sender, EventArgs e)
+        {
+           
+             string sValue = "445"; // 숫자로 변경 될 문자
+             int iResult; // 변경된 숫자가 담기는 정수 변수.
+             bool bFlag; // TryParse 의 결과 가 담기는 변수*/
+
+            //TryParse의 기능 복기
+            bFlag = int.TryParse(sValue, out iResult);
+
+            
+
+            //TryParse 기능 구현 실습
+
+            bFlag = Int_.TryParse(sValue, out iResult);
+            MessageBox.Show($"결과는 {bFlag} 이고, 값은 {iResult} 입니다");
+        }
+
+
+        #endregion
+
+
+        #region< 일반화 메소드 Generic Method >
+        private void btnGenericMethod_Click(object sender, EventArgs e)
+        {
+            // 같은 기능을 하는 메서드가 인자의 데이터 타입만 바뀌는 경우
+            // 인자의 데이터 타입이 같은 메서드를 데이터 타입에 따라
+            // 오버로딩 할 경우에는 
+            // 메서드 일반화 를 통하여 여러 데이터 타입의 인자를 처리하는
+            // 메서드를 하나만 만들어서 관리 할 수 있다.
+
+            // StringSum("안녕하세요", "반갑습니다");  //안녕하세요_반갑습니다
+
+            G_StringSum<string>("안녕하세요", "반갑습니다");
+            G_StringSum<int>(100, 200);
+            G_StringSum<Double>(100.1, 200.2);
+            G_StringSum<char>('마', '늘');
+        }
+
+        void StringSum(string sValue, string sValue2) // 사용하고있다
+        {
+            MessageBox.Show($"{sValue}_{sValue2}");
+
+
+        }
+        void StringSum(int iValue, int iValue2) // 사용하지않고있다
+        {
+         
+            MessageBox.Show($"{iValue}_{iValue2}");
+        }
+
+        // 인수 인자 개수도 같은데 데이터 타입만 바뀔경우는
+        // 메서드를 하나만 만들어서 구현 할 수 있다.
+        //Generic Method
+
+        void  G_StringSum<T>(T gValue, T gValue2) 
+        {
+         
+            MessageBox.Show($"{gValue}_{gValue2}");
+        }
+        
         #endregion
 
     }
@@ -347,4 +474,33 @@ namespace MyfirstCSharp
         }
     
     }
+
+    class Int_
+    {
+      public static bool TryParse(string sValue, out int iResult) 
+        {
+            try
+            {
+                iResult = int.Parse(sValue);
+                return true;
+            }
+
+            catch 
+            {
+                iResult = 0;
+                return false;
+            
+            }
+
+            
+       
+        }
+    
+    }
+
+
+
+
 }
+
+
