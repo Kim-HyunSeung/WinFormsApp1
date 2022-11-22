@@ -52,16 +52,16 @@ namespace MyfirstCSharp
                     MessageBox.Show($" 있다면{sValue} 문자는 포함되어 있습니다");
                     bFlag = true;
                 }
-       
+
 
 
 
             }
-            if(!bFlag)
-                {
+            if (!bFlag)
+            {
 
                 MessageBox.Show($" 없다면{sValue} 문자는 포함되어 있자않습니다");
-               
+                
             }
 
 
