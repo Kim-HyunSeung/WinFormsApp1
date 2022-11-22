@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace MyFirstCSharp
 {
-    public partial class Chap16_Switch_Test4 : Form
+    public partial class Chap17_Loop01_ForTest03 : Form
     {
-        public Chap16_Switch_Test4()
+        public Chap17_Loop01_ForTest03()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

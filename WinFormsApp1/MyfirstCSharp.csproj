@@ -12,7 +12,7 @@
     <Compile Update="Chap16_Switch_Test - 복사.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Chap16_Switch_Test4 - .cs">
+    <Compile Update="Chap17_Loop01_ForTest03.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
