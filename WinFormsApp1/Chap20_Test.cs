@@ -56,12 +56,12 @@ namespace MyfirstCSharp
 
                     //txtC1.Text += Convert.ToString(c[i, j]);
                     c[d, j] = iValue[i, j];               
-                    txtC1.Text += Convert.ToString(c[d,j]);
+                    txtC1.Text += Convert.ToString(c[d, j]); 
                    
                 }
                 txtC1.Text += "\r\n";
                 ++d;
-
+                //ㅇㅇㅇ
             }
 
         
