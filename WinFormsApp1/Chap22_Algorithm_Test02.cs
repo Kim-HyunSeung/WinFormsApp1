@@ -112,44 +112,44 @@ namespace MyfirstCSharp
         private void btnSerch_Click(object sender, EventArgs e)
         {
             string sTitle = lblS.Text;
-
-            bool bFindFlag = true;
             string sBaseWord = string.Empty;
-            // int i = 0 : 기준 문자의 위치 Index
-            for (int i = 0; i < sTitle.Length; i++)
-            {
-                sBaseWord = sTitle.Substring(i, 1);
+            bool bFindFlag = true;
 
-                // int j  기준 문자로 부터 비교대상 문자 의 위치
+            for (int i = 0; i < lblS.Text.Length; i++) //기준 문자의 위치index
+            {
+
+                sBaseWord = sTitle.Substring(i, 1);//A
+                //기준 문자로부터 비교대상 문자의 위치
                 for (int j = i + 1; j < sTitle.Length; j++)
                 {
-                    // 기준 문자 이후 부터 한글자씩 추출.
-                    string sValueWord = sTitle.Substring(j, 1);
+                    string sValueWord = sTitle.Substring(j, 1); //기준 문자 이후 부터 한글자씩 추출
 
-                    // 기준 문자와 추출한 문자 를 비교
+                    // 기준 문자의 추출된 문자줄비교
                     if (sBaseWord == sValueWord)
                     {
-                        // 중복 문자를 찾았을때 bFindFlag = false 를 대입
                         bFindFlag = false;
+                        //중복문자를 찾았을 경우 빠져나옴
                         break;
+
                     }
-                    // 중복 문자를 찾지 못했을때에는 bFindFlag = true 를 대입
                     bFindFlag = true;
+
                 }
 
-                //  중복 문자를 찾지 못했으므로 
-                if (bFindFlag == true)
+                //중복된 문자를 찾지못햇을때
+                if (bFindFlag)
                 {
-                    // For 반복문 종료. 
+                    //중지
                     break;
                 }
+
             }
-            // 기준 문자 로 잡은 sBaseWord 를 표현.
-            MessageBox.Show($"중복되지 않는 첫 문자는 {sBaseWord} 입니다.");
+            MessageBox.Show($"중복되지않는 첫 문자는{sBaseWord}");
+
 
 
 
         }
-        
+
     }
 }
