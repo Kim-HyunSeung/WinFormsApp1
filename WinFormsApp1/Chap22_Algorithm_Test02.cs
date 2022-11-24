@@ -107,5 +107,15 @@ namespace MyfirstCSharp
             }
 
         }
+
+        private void btnSerch_Click(object sender, EventArgs e)
+        {
+            string sTitle = lblS.Text;
+
+
+
+
+
+        }
     }
 }

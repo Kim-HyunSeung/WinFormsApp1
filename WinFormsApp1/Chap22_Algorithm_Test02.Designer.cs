@@ -85,6 +85,7 @@
             this.btnSerch.TabIndex = 4;
             this.btnSerch.Text = "찾기";
             this.btnSerch.UseVisualStyleBackColor = true;
+            this.btnSerch.Click += new System.EventHandler(this.btnSerch_Click);
             // 
             // Chap22_Algorithm_Test02
             // 
