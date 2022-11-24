@@ -209,6 +209,78 @@ namespace MyfirstCSharp
         
         }
 
+        private void btnHashTable_Click(object sender, EventArgs e)
+        {
+            // HashTable
+            // dictionary와 유사한 기능을 가지지만,
+            // key와 value 의 데이터 유형을 따로 정해주지 않아도 된다.(object형식)
+            // value 의 내용이 데이터 타입이 지정 되지 않았으므로
+            // 호출 시에는 반드시 형 변환 과정이 필요하다.
 
+            //hashtable 생성
+            Hashtable HT = new Hashtable();
+            HT[1] = "ONE";
+            HT[2] = "TWO";
+            HT["삼"] = 3;
+            HT[1.23] = 222;
+            HT[true] = 333;
+
+            // 2. Hashtable 의 데이터 호출(표현)
+            MessageBox.Show(Convert.ToString(HT[1]));
+            MessageBox.Show(Convert.ToString(HT["삼"]));
+            MessageBox.Show(Convert.ToString(HT["십"]));
+
+
+            //hashtable 의 데이터 등록 방법 2(초기화)
+            //3- 1. dictionary 초기자로 초기화 방식
+            Hashtable HT2 = new Hashtable()
+            {
+                ["하나"] = 1,
+                ["둘"] = 2,
+                [2] = "TWO",
+                [1.3] = 1.3
+            };
+
+            //3- 2. collertion 초기자로 초기화 하는방식
+            Hashtable HT3 = new Hashtable()
+            {
+                { "하나",1},
+                { "둘",2},
+                {1.3,1.7}
+            };
+            // 4. hashtable 복사방법
+            //4-1 값 형식으로 복사
+            Hashtable HT4 = new Hashtable(HT);
+            HT4["삼"] = 100;
+            MessageBox.Show(Convert.ToString(HT["삼"]));//3
+
+            // 4-2 참조 형식으로 복사.
+            Hashtable HT5 = HT;
+            HT5["삼"] = 100;
+            MessageBox.Show(Convert.ToString(HT["삼"]));//100
+
+            //5.키와 값을  추가
+            HT.Add("육", 100);
+            // 6. 키와 값을 삭제
+            HT.Remove("육");
+            // 7 .키의 존재 유무
+           MessageBox.Show(Convert.ToString(HT.ContainsKey("육")));
+
+            //8.값의 존재 유무
+            MessageBox.Show(Convert.ToString(HT.ContainsValue(3)));
+
+            //9. 데이터의 삭제.
+            HT.Clear();
+           
+            
+            // Array, ArrayList 와 Dictoinary , Hash 테이블의 장단점.
+            // 주소값으로 데이터를 찾아가는 방식 : Array, ArrayList
+            // 검색 ,수정 ,삭제의 기능이 복잡한 로직으로 처리 되어 수행 속도가 다소 느리다.
+
+            // 키 값을 바탕으로 주소를 찾아가서 데이터를 찾는 방식 : Dictionnary ,HashTable
+            // 지정한 키를 통해 값을 찾아 내어 수정 , 삭제 ,조회의 기능을 빠르게 수행 할 수 있다.
+            // 불필요한 메모리가 상주 해있을 가능성이 큰 자료형 구조.
+
+        }
     }
 }

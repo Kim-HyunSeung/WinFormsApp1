@@ -21,9 +21,6 @@
     <Compile Update="Chap17_Loop01_ForTest12.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Chap21_Collection1.cs">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
 
 </Project>

@@ -32,6 +32,7 @@
             this.btnQueue = new System.Windows.Forms.Button();
             this.btnStack = new System.Windows.Forms.Button();
             this.btnDictionary = new System.Windows.Forms.Button();
+            this.btnHashTable = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnArrayList
@@ -74,11 +75,22 @@
             this.btnDictionary.UseVisualStyleBackColor = true;
             this.btnDictionary.Click += new System.EventHandler(this.btnDictionary_Click);
             // 
+            // btnHashTable
+            // 
+            this.btnHashTable.Location = new System.Drawing.Point(171, 153);
+            this.btnHashTable.Name = "btnHashTable";
+            this.btnHashTable.Size = new System.Drawing.Size(126, 79);
+            this.btnHashTable.TabIndex = 4;
+            this.btnHashTable.Text = "HashTable";
+            this.btnHashTable.UseVisualStyleBackColor = true;
+            this.btnHashTable.Click += new System.EventHandler(this.btnHashTable_Click);
+            // 
             // Chap21_Collection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnHashTable);
             this.Controls.Add(this.btnDictionary);
             this.Controls.Add(this.btnStack);
             this.Controls.Add(this.btnQueue);
@@ -95,5 +107,6 @@
         private Button btnQueue;
         private Button btnStack;
         private Button btnDictionary;
+        private Button btnHashTable;
     }
 }
