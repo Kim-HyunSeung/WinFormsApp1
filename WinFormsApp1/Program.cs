@@ -1,3 +1,4 @@
+using CHAP04_MiddleExam;
 using MyfirstCSharp;
 using MyFirstCSharp;
 
@@ -14,7 +15,7 @@ namespace WinFormsApp1
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Chap22_Algorithm_Test02());
+            Application.Run(new Chap22_Algorithm_Test05());
         }
     }
 }

@@ -45,7 +45,9 @@ namespace MyfirstCSharp
             // ArrList.Sort();// 리스트에 있는 내용을 정렬
             // * 데이터타입이 혼용 되어있을경우 정렬을 할 수 없다.
 
-            ArrList.Remove(2); //2번 인덱스에 있는 데이터의 메모리 삭제 후 다시 정렬.
+            ArrList.Remove(3); //3번 인덱스에 있는 데이터의 메모리 삭제 후 다시 정렬.
+
+            ArrList.RemoveAt(3); //3번 인덱스(주소) 에 있는 데이터를 삭제 한다.
 
             ArrList.Insert(2, 40); //2번째 인덱스에 40데이터 추가
 
