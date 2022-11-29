@@ -21,6 +21,18 @@
     <Compile Update="Chap17_Loop01_ForTest12.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Chap24_Application_Test_Enum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Chap23_Application_Test77.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Chap23_Application_Test02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Chap23_Application_Test01.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>

@@ -15,24 +15,24 @@ namespace CHAP04_MiddleExam
         {
 
             string sTitle = lblTitle.Text;
-            sTitle = sTitle.Replace("{", "");
+            sTitle = sTitle.Replace("{", ""); // 라벨에 있는 문자열에서 앞코딩은 있는것 뒷코딩은 바꾸는방법.
             sTitle = sTitle.Replace("}", "");
             sTitle = sTitle.Replace(" ", "");
 
             // 1,2,3,4,5,10,11,12
-            string[] sValues = sTitle.Split(',');
+            string[] sValues = sTitle.Split(','); //콤마를 두고 양옆문자열을 나누는 방법
 
             // int 배열 생성 (문자 배열의 데이터 개수 만큼 방 만들기) 
             int[] iVlaues = new int[sValues.Length];
 
             // 문자 배열 정수 배열로 담기.
-            for (int i = 0; i < sValues.Length; i++)
+            for (int i = 0; i < sValues.Length; i++) //라벨에있는 문자열을 총 갯수로 반복 함
             {
                 iVlaues[i] = Convert.ToInt32(sValues[i]);
             }
 
             // 정수 배열 정렬
-            Array.Sort(iVlaues);
+            Array.Sort(iVlaues); //배열에 있는 값들을 적은수부터 정렬함.
 
             //1
             //2
@@ -51,7 +51,7 @@ namespace CHAP04_MiddleExam
 
 
             // 중복 값을 찾은 횟수 Count
-            int iFindCount = 0;
+            int iFindCount = 0; 
 
             // 찾은 값을 누적 시킬 변수
             string sValue = string.Empty;
@@ -111,14 +111,6 @@ namespace CHAP04_MiddleExam
         //23
 
 
-
-
-
-
-
-        // 다음 문자열에 포함된 수를 정수 배열로 만들고 중복 되는 수 중 낮은 수 의 첫번째 값과 세번째 값을 메세지 박스로 나타내세요.
-        // 라벨에 입력 된  문자열을 받아 정수 배열로 만드는 로직을 작성할것
-        // {1, 2 , 13, 15 , 17,  23,  8,  15, 8,  19,  3,  8,  13 }
 
     }
 
