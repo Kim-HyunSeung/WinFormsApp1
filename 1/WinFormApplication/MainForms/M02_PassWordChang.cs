@@ -57,7 +57,7 @@ namespace MainForms
 
 
                 // 1. 데이터 베이스 오픈
-                // 
+                 
                 string sConn = "Data Source = (local) ;Initial Catalog = AppDev;Integrated Security = SSPI;";
                 Connect = new SqlConnection(sConn);
                 Connect.Open();
