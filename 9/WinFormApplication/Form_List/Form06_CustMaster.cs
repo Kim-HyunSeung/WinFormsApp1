@@ -10,6 +10,14 @@ using Assamble;
 
 namespace Form_List
 {
+    /*------------------------------------------------------
+* NAME    : Form05_UserMaster
+* DESC    : 저장 프로시저를 이용안 고객 관리 화면.
+*------------------------------------------------------
+* DATE    : 2022-12-16
+* AUTHOR  : 김현승
+* DESC    : 최초 프로그램 작성
+-------------------------------------------------------*/
     public partial class Form06_CustMaster : Assamble.BaseChildForm
     {
         public Form06_CustMaster()
@@ -19,6 +27,22 @@ namespace Form_List
 
         private void Form06_CustMaster_Load(object sender, EventArgs e)
         {
+            #region< 1. 그리드 셋팅 >
+            // 1. 메서드를 이용한 그리드 셋팅.
+
+            // - 데이터 테이블에 컬럼셋팅.
+            // - 셋팅 컬럼 그리드 매핑
+            // - 컬럼에 한글 명칭 TEXT 로직 구현
+            // - 컬럼의 폭 지정
+            // - 컬럼의 데이터 표현 위치(정렬)
+            // - 컬럼의 수정 여부
+
+
+
+
+
+
+            // 2. 날코딩을 통한 그리드 셋팅
             // 그리드 셋팅
             // 콤보박스 셋팅
             DataTable dtTemp = new DataTable();
@@ -47,8 +71,12 @@ namespace Form_List
             dgvgrid.Columns["EDITDATE"].HeaderText = "수정일시";
             dgvgrid.Columns["EDITOR"].HeaderText = "수정자";
 
+            #endregion
+
+
             Common.SetComboControl("CUSTTYPE", cboC); // 거래처에 관련된 공통 기준정보 조회.
 
+            
         }
         public override void DoInquire()
         {

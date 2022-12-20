@@ -13,7 +13,7 @@ namespace Form_List
 
     /*------------------------------------------------------
  * NAME    : Form05_UserMaster
- * DESC    : 저장 프로시저를 이요안 사용자 관리 화면.
+ * DESC    : 저장 프로시저를 이용한 사용자 관리 화면.
  *------------------------------------------------------
  * DATE    : 2022-12-16
  * AUTHOR  : 김현승
@@ -32,29 +32,53 @@ namespace Form_List
 
         private void Form05_UserMaster_Load(object sender, EventArgs e)
         {
-            DataTable dtTemp = new DataTable();
-            dtTemp.Columns.Add("USERID", typeof(string));
-            dtTemp.Columns.Add("USERNAME", typeof(string));
-            dtTemp.Columns.Add("PW", typeof(string));
-            dtTemp.Columns.Add("PW_FCNT", typeof(string));
-            dtTemp.Columns.Add("DEPTCODE", typeof(string));
-            dtTemp.Columns.Add("MAKEDATE", typeof(string));
-            dtTemp.Columns.Add("MAKER", typeof(string));
-            dtTemp.Columns.Add("EDITDATE", typeof(string));
-            dtTemp.Columns.Add("EDITOR", typeof(string));
-            dgvGrid.DataSource = dtTemp;
 
-            dgvGrid.Columns["USERID"].HeaderText = "사용자ID";
-            dgvGrid.Columns["USERNAME"].HeaderText = "사용자명";
-            dgvGrid.Columns["PW"].HeaderText = "비밀번호";
-            dgvGrid.Columns["PW_FCNT"].HeaderText = " 실패횟수 ";
-            dgvGrid.Columns["DEPTCODE"].HeaderText = "부서";
-            dgvGrid.Columns["MAKEDATE"].HeaderText = "등록일시";
-            dgvGrid.Columns["MAKER"].HeaderText = "등록자";
-            dgvGrid.Columns["EDITDATE"].HeaderText = "수정일시";
-            dgvGrid.Columns["EDITOR"].HeaderText = "수정자";
+            // 1. 메서드를 이용한 그리드 셋팅.
+            // 2. _GridUtil 객체 생성 인스턴스화 
+            GridUtil _GridUtil = new GridUtil();
+            _GridUtil.InitColumnGrid(dgvGrid, "USERID", "사용자 ID",  typeof(string),    100, DataGridViewContentAlignment.MiddleLeft, false);
+            _GridUtil.InitColumnGrid(dgvGrid, "USERNAME", "사용자명", typeof(string),    100, DataGridViewContentAlignment.MiddleLeft, false);
+            _GridUtil.InitColumnGrid(dgvGrid, "PW", "비밀번호",       typeof(string),    100, DataGridViewContentAlignment.MiddleLeft, false);
+            _GridUtil.InitColumnGrid(dgvGrid, "PW_FCNT", "오류횟수 ", typeof(int),       100, DataGridViewContentAlignment.MiddleRight, false);
+            _GridUtil.InitColumnGrid(dgvGrid, "DEPTCODE", "부서",     typeof(string),    100, DataGridViewContentAlignment.MiddleLeft, false);
+            _GridUtil.InitColumnGrid(dgvGrid, "MAKEDATE", "생성일시", typeof(DateTime),  200, DataGridViewContentAlignment.MiddleLeft, false);
+            _GridUtil.InitColumnGrid(dgvGrid, "MAKER", "생성자",      typeof(string),    100, DataGridViewContentAlignment.MiddleLeft, false);
+            _GridUtil.InitColumnGrid(dgvGrid, "EDITDATE", "수정일시", typeof(DateTime),  200, DataGridViewContentAlignment.MiddleLeft, false);
+            _GridUtil.InitColumnGrid(dgvGrid, "EDITOR", "수정자",     typeof(string),    100, DataGridViewContentAlignment.MiddleLeft, false);
 
-           Common.SetComboControl("DEPTCODE",cboDePart); // 부서에 관련된 공통 기준정보 조회.
+            // - 데이터 테이블에 컬럼셋팅.
+            // - 셋팅 컬럼 그리드 매핑
+            // - 컬럼에 한글 명칭 TEXT 로직 구현
+            // - 컬럼의 폭 지정
+            // - 컬럼의 데이터 표현 위치(정렬)
+            // - 컬럼의 수정 여부
+
+
+
+
+            //DataTable dtTemp = new DataTable();
+            //dtTemp.Columns.Add("USERID", typeof(string));
+            //dtTemp.Columns.Add("USERNAME", typeof(string));
+            //dtTemp.Columns.Add("PW", typeof(string));
+            //dtTemp.Columns.Add("PW_FCNT", typeof(string));
+            //dtTemp.Columns.Add("DEPTCODE", typeof(string));
+            //dtTemp.Columns.Add("MAKEDATE", typeof(string));
+            //dtTemp.Columns.Add("MAKER", typeof(string));
+            //dtTemp.Columns.Add("EDITDATE", typeof(string));
+            //dtTemp.Columns.Add("EDITOR", typeof(string));
+            //dgvGrid.DataSource = dtTemp;
+
+            //dgvGrid.Columns["USERID"].HeaderText = "사용자ID";
+            //dgvGrid.Columns["USERNAME"].HeaderText = "사용자명";
+            //dgvGrid.Columns["PW"].HeaderText = "비밀번호";
+            //dgvGrid.Columns["PW_FCNT"].HeaderText = " 실패횟수 ";
+            //dgvGrid.Columns["DEPTCODE"].HeaderText = "부서";
+            //dgvGrid.Columns["MAKEDATE"].HeaderText = "등록일시";
+            //dgvGrid.Columns["MAKER"].HeaderText = "등록자";
+            //dgvGrid.Columns["EDITDATE"].HeaderText = "수정일시";
+            //dgvGrid.Columns["EDITOR"].HeaderText = "수정자";
+
+            Common.SetComboControl("DEPTCODE",cboDePart); // 부서에 관련된 공통 기준정보 조회.
           
 
         }

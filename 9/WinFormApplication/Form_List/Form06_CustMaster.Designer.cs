@@ -58,18 +58,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(38, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "업체코드";
+            this.label1.Text = "거래처코드";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(220, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 1;
-            this.label2.Text = "업체명";
+            this.label2.Text = "거래처명";
             // 
             // label3
             // 
@@ -82,7 +82,7 @@
             // 
             // txtVC
             // 
-            this.txtVC.Location = new System.Drawing.Point(97, 41);
+            this.txtVC.Location = new System.Drawing.Point(109, 41);
             this.txtVC.Name = "txtVC";
             this.txtVC.Size = new System.Drawing.Size(86, 21);
             this.txtVC.TabIndex = 3;

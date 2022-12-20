@@ -51,6 +51,7 @@
     </Compile>
     <Compile Include="Common.cs" />
     <Compile Include="DBHelper.cs" />
+    <Compile Include="GridUtil.cs" />
     <Compile Include="iChildCommds.cs" />
     <Compile Include="MyTabControl.cs">
       <SubType>Component</SubType>
